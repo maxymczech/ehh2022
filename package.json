@@ -1,0 +1,39 @@
+{
+  "author": "robomeow",
+  "bugs": {
+    "url": "https://github.com/maxymczech/ehh2022/issues"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
+  },
+  "description": "DiaBro application by team robomeow for European Healthcare Hackathon 2022",
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.15.15",
+    "esbuild-envfile-plugin": "^1.0.5",
+    "esbuild-serve": "^1.0.1"
+  },
+  "homepage": "https://github.com/maxymczech/ehh2022#readme",
+  "keywords": [
+    "diabetes",
+    "Europe",
+    "healthcare",
+    "hackathon",
+    "2022"
+  ],
+  "license": "ISC",
+  "main": "src/App.js",
+  "name": "ehh2022-diabro",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxymczech/ehh2022.git"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "start": "node esbuild.config.js -w"
+  },
+  "type": "module",
+  "version": "1.0.0"
+}
