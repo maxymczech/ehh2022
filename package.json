@@ -13,7 +13,7 @@
     "dotenv": "^16.0.3",
     "esbuild": "^0.15.15",
     "esbuild-envfile-plugin": "^1.0.5",
-    "esbuild-serve": "^1.0.1"
+    "esbuild-serve": "https://github.com/maxymczech/esbuild-serve.git"
   },
   "homepage": "https://github.com/maxymczech/ehh2022#readme",
   "keywords": [

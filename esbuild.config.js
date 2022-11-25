@@ -18,9 +18,7 @@ esbuildServe(
     plugins: [envFilePlugin]
   },
   {
-    onRequest: () => {
-      console.log('request');
-    },
+    fallback: 'index.html',
     port: 7000,
     root: './public/'
   }

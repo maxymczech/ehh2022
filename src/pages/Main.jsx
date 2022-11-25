@@ -8,7 +8,7 @@ export default function Main() {
   return (
     <>
       <span>Main Page</span>
-      <Link to="/secondary/">Secondary Page</Link>
+      <Link to="/secondary">Secondary Page</Link>
       <p>
         <img alt="" src={testImage} width="100" />
         <span className="css-image"></span>
