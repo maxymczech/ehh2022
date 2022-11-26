@@ -5,10 +5,9 @@ import Loader from '../components/ui/Loader';
 import {useParams} from 'react-router-dom';
 import {useSessionContext} from '../contexts/SessionContext';
 
-export default function PatientDashboard() {
+export default function PatientLog() {
   const [loaded, setLoaded] = useState(true);
 
-  const {currentPatient} = useSessionContext();
   const {patientId} = useParams();
 
   return (
@@ -16,7 +15,7 @@ export default function PatientDashboard() {
       {!loaded ? (
         <Loader />
       ) : (
-        'Patient Dashboard'
+        'Patient Log'
       )}
     </>
   );

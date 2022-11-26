@@ -4,9 +4,13 @@ const SessionContext = createContext();
 
 const SessionProvider = ({children}) => {
   const [currentLocale, setCurrentLocale] = useState('en');
+  const [currentPatient, setCurrentPatient] = useState(null);
 
   const sessionState = {
-    currentLocale
+    currentLocale,
+    currentPatient,
+    setCurrentLocale,
+    setCurrentPatient
   };
 
   return (

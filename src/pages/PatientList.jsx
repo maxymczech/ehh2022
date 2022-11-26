@@ -6,7 +6,7 @@ import Loader from '../components/ui/Loader';
 import PatientItem from '../components/ui/PatientItem';
 import {useNavigate} from "react-router-dom";
 
-export default function Main() {
+export default function PatientList() {
   const [patients, setPatients] = useState([]);
   const [loaded, setLoaded] = useState(false);
 
@@ -26,7 +26,7 @@ export default function Main() {
   }, []);
 
   const handleClick = patient => {
-    navigate(`/patient/${patient.id}`);
+    navigate(`/patient/${patient.id}/dashboard`);
   };
 
   return !loaded ? (

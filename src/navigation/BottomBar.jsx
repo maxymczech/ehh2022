@@ -1,34 +1,43 @@
 import './BottomBar.scss';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import React from 'react';
 import config from '../config';
 import getAge from '../utils/get-age';
 import getName from '../utils/get-name';
 import i18n from '../utils/i18n';
+import {useSessionContext} from '../contexts/SessionContext';
 
-export default function BottomBar({active, patient, patientId}) {
+export default function BottomBar() {
+  const {currentPatient} = useSessionContext();
+  const location = useLocation();
 
-  const age = getAge(patient?.birthDate);
+  const isActive = routeName => location.pathname.endsWith(`/${routeName}`);
+  const patientId = currentPatient?.id;
+
+  const age = getAge(currentPatient?.birthDate);
   const isOld = age >= config.oldAge;
-  const name = getName(patient?.name?.[0]);
+  const name = getName(currentPatient?.name?.[0]);
 
-  const profileIconClass = patient ? `profile-image ${patient.gender} ${isOld ? 'old' : 'young'}` : '';
+  const profileIconClass = currentPatient ? `profile-image ${currentPatient?.gender} ${isOld ? 'old' : 'young'}` : '';
 
   return (
     <div className="bottom-bar">
-      <div className="diabro" />
+      <Link
+        className="diabro"
+        to={`/patient/${patientId}/diabro`}
+      />
       <div className="items">
         <Link
-          className={active === 'dashboard' ? 'active' : ''}
-          to={`/patient/${patientId}`}
+          className={isActive('dashboard') ? 'active' : ''}
+          to={`/patient/${patientId}/dashboard`}
         >
-          <span className={`icon ${patient ? profileIconClass : ''}`} />
+          <span className={`icon ${currentPatient ? profileIconClass : ''}`} />
           <span className="text">
             {i18n.t('bottomNavigation.dashboard')}
           </span>
         </Link>
         <Link
-          className={active === 'calculator' ? 'active' : ''}
+          className={isActive('calculator') ? 'active' : ''}
           to={`/patient/${patientId}/calculator`}
         >
           <span className="icon calculator" />
@@ -37,7 +46,7 @@ export default function BottomBar({active, patient, patientId}) {
           </span>
         </Link>
         <Link
-          className={active === 'information' ? 'active' : ''}
+          className={isActive('information') ? 'active' : ''}
           to={`/patient/${patientId}/information`}
         >
           <span className="icon information" />
@@ -46,7 +55,7 @@ export default function BottomBar({active, patient, patientId}) {
           </span>
         </Link>
         <Link
-          className={active === 'log' ? 'active' : ''}
+          className={isActive('log') ? 'active' : ''}
           to={`/patient/${patientId}/log`}
         >
           <span className="icon log" />
