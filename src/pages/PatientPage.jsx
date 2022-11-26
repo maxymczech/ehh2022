@@ -11,15 +11,22 @@ export default function PatientPage() {
   const [loaded, setLoaded] = useState(false);
 
   const {patientId} = useParams();
-  const {currentPatient, setCurrentPatient} = useSessionContext();
+  const {
+    currentPatient,
+    setCurrentPatient,
+    setCurrentPatientData
+  } = useSessionContext();
 
   useEffect(() => {
     (async () => {
       try {
-        const result = await FHIRRequest(`/Patient/${patientId}`);
+        const result = await FHIRRequest(`/Patient/${patientId}/$everything`);
         const data = await result.json();
         setLoaded(true);
-        setCurrentPatient(data);
+
+        const patient = data?.entry?.find?.(item => item?.search?.mode === 'match')?.resource;
+        setCurrentPatient(patient);
+        setCurrentPatientData(data);
       } catch (e) {
         console.error(e);
       }

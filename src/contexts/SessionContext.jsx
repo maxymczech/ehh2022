@@ -6,6 +6,7 @@ const SessionContext = createContext();
 const SessionProvider = ({children}) => {
   const [currentLocale, setCurrentLocale] = useState('en');
   const [currentPatient, setCurrentPatient] = useState(null);
+  const [currentPatientData, setCurrentPatientData] = useState(null);
   const [languageModalOpen, setLanguageModalOpen] = useState(false);
 
   useEffect(() => {
@@ -22,9 +23,11 @@ const SessionProvider = ({children}) => {
   const sessionState = {
     currentLocale,
     currentPatient,
+    currentPatientData,
     languageModalOpen,
     setCurrentLocale,
     setCurrentPatient,
+    setCurrentPatientData,
     setLanguageModalOpen
   };
 
