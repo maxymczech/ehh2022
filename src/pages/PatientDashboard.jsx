@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import BottomBar from '../navigation/BottomBar';
 import FHIRRequest from '../api/FHIRRequest';
 import Loader from '../components/ui/Loader';
+import PatientHeader from '../components/ui/PatientHeader';
 import {useParams} from 'react-router-dom';
 import {useSessionContext} from '../contexts/SessionContext';
 
@@ -25,15 +26,28 @@ export default function Main() {
     })()
   }, []);
 
-  return !loaded ? (
-    <Loader />
-  ) : (
+  return (
     <>
-      <div className="dashboard">
-        Patient Dashboard
-      </div>
-      <BottomBar active="dashboard" />
+      {!loaded ? (
+        <Loader />
+      ) : (
+        <>
+          {patient && (
+            <PatientHeader
+              goBack={true}
+              patient={patient}
+            />
+          )}
+          <div className="page-padding dashboard">
+            Patient Dashboard
+          </div>
+        </>
+      )}
+      <BottomBar
+        active="dashboard"
+        patient={patient}
+        patientId={patientId}
+      />
     </>
   );
 }
-

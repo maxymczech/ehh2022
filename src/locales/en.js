@@ -2,7 +2,9 @@ export default {
   bottomNavigation: {
     calculator: 'Carb Calculator',
     dashboard: 'Dia Bro Dashboard',
-    profile: 'Profile',
+    information: 'Useful Information',
+    log: 'Log Activity',
+    profile: 'Profile'
   },
   patient: {
     age: 'Age'

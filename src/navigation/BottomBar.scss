@@ -1,8 +1,81 @@
+@use 'sass:math';
+@import '../styles/variables.scss';
+
+$diabro-size: 70px;
+$icon-size: 40px;
+
 .bottom-bar {
-  background-color: red;
   bottom: 0;
-  height: 100px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  height: $bottom-bar-height;
   left: 0;
   position: fixed;
   right: 0;
+
+  .items {
+    display: flex;
+
+    & > * {
+      color: $color-primary;
+      filter: grayscale(100%);
+      flex: 1 1 0;
+      opacity: 0.7;
+      padding-top: math.div($base-spacing, 2);
+      text-align: center;
+      text-decoration: none;
+
+      &:nth-child(3) {
+        margin-left: $diabro-size;
+      }
+
+      &.active {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+
+      .icon {
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        display: block;
+        height: $icon-size;
+        margin: 0 auto math.div($base-spacing, 2);
+        width: $icon-size;
+
+        &.calculator {
+          background-image: url(../assets/images/calculator.svg);
+          background-size: 75% auto;
+        }
+
+        &.information {
+          background-image: url(../assets/images/info.svg);
+          background-size: auto 75%;
+        }
+
+        &.log {
+          background-image: url(../assets/images/log-add.svg);
+          background-size: 75% auto;
+        }
+      }
+
+      .text {
+        font-size: 0.75rem;
+        line-height: 1.1;
+      }
+    }
+  }
+
+  .diabro {
+    background-color: #fff;
+    background-image: url(../assets/images/beta-smile.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 90% auto;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    height: $diabro-size;
+    left: calc(50% - math.div($diabro-size, 2));
+    position: absolute;
+    top: math.div(-$diabro-size, 2);
+    width: $diabro-size;
+  }
 }
