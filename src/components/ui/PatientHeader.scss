@@ -35,6 +35,7 @@ $icon-size: $top-bar-height - 2 * $base-spacing;
   }
 
   .profile-image {
+    border: none;
     flex-shrink: 0;
     height: $icon-size;
     width: $icon-size;

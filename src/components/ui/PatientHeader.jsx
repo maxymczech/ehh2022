@@ -22,7 +22,10 @@ export default function PatientHeader({goBack}) {
       <LanguagePicker />
 
       <div className="name">{name}</div>
-      <div className={`profile-image ${currentPatient?.gender} ${isOld ? 'old' : 'young'}`} />
+      <Link
+        className={`profile-image ${currentPatient?.gender} ${isOld ? 'old' : 'young'}`}
+        to={`/patient/${currentPatient?.id}/dashboard`}
+      />
     </div>
   );
 }
