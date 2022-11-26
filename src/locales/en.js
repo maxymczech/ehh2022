@@ -3,5 +3,8 @@ export default {
     calculator: 'Carb Calculator',
     dashboard: 'Dia Bro Dashboard',
     profile: 'Profile',
+  },
+  patient: {
+    age: 'Age'
   }
 };

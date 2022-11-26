@@ -1,0 +1,49 @@
+.patient-item {
+  align-items: center;
+  display: flex;
+
+  .photo {
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    flex-shrink: 0;
+    height: 80px;
+    margin-right: 16px;
+    width: 80px;
+
+    &.female {
+      &.old {
+        background-image: url(../../assets/images/profile-female-old.svg);
+      }
+
+      &.young {
+        background-image: url(../../assets/images/profile-female-young.svg);
+      }
+    }
+
+    &.male {
+      &.old {
+        background-image: url(../../assets/images/profile-male-old.svg);
+      }
+
+      &.young {
+        background-image: url(../../assets/images/profile-male-young.svg);
+      }
+    }
+  }
+
+  .rest {
+    overflow: hidden;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 0 8px;
+    }
+
+    p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}

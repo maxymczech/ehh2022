@@ -1,10 +1,12 @@
-import React, {createContext, useContext} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 
 const SessionContext = createContext();
 
 const SessionProvider = ({children}) => {
+  const [currentLocale, setCurrentLocale] = useState('en');
+
   const sessionState = {
-    currentLocale: 'en'
+    currentLocale
   };
 
   return (

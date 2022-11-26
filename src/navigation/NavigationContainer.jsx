@@ -1,20 +1,19 @@
 import {
+  BrowserRouter,
   Route,
-  RouterProvider,
-  createBrowserRouter
+  Routes
 } from "react-router-dom";
-import Main from '../pages/Main';
+import PatientDashboard from '../pages/PatientDashboard';
+import PatientList from '../pages/PatientList';
 import React from 'react';
-import Secondary from '../pages/Secondary';
-
-const router = createBrowserRouter([{
-  path: "/",
-  element: <Main />,
-}, {
-  path: "secondary",
-  element: <Secondary />,
-}]);
 
 export default function NavigationContainer() {
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<PatientList />} path="/" />
+        <Route element={<PatientDashboard />} path="/patient/:patientId" />
+      </Routes>
+    </BrowserRouter>
+  );
 }
