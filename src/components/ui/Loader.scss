@@ -1,0 +1,63 @@
+@use "sass:math";
+
+$loader-border-width: 10px;
+$loader-color: var(--color-primary);
+$loader-size: 100px;
+
+$loader-position-start: math.div($loader-size, 2) - $loader-border-width;
+$loader-position-end: $loader-size - $loader-border-width * 2;
+
+.css-loader {
+  display: inline-block;
+  height: $loader-size;
+  left: calc(50% - math.div($loader-size, 2));
+  position: absolute;
+  top: calc(50% - $loader-size / 2);
+  width: $loader-size;
+
+  div {
+    animation: css-loader 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    border: $loader-border-width solid $loader-color;
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+
+    &:nth-child(2) {
+      animation-delay: -0.5s;
+    }
+  }
+}
+
+@keyframes css-loader {
+  0% {
+    height: 0;
+    left: $loader-position-start;
+    opacity: 0;
+    top: $loader-position-start;
+    width: 0;
+  }
+
+  4.9% {
+    height: 0;
+    left: $loader-position-start;
+    opacity: 0;
+    top: $loader-position-start;
+    width: 0;
+  }
+
+  5% {
+    height: 0;
+    left: $loader-position-start;
+    opacity: 1;
+    top: $loader-position-start;
+    width: 0;
+  }
+
+  100% {
+    height: $loader-position-end;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    width: $loader-position-end;
+  }
+}
