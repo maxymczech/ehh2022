@@ -15,7 +15,7 @@ export default function PatientItem(props) {
   return (
     <div {...props} className="card patient-item">
       <div
-        className={`photo ${patient.gender} ${isOld ? 'old' : 'young'}`}
+        className={`profile-image ${patient.gender} ${isOld ? 'old' : 'young'}`}
       />
       <div className="rest">
         <h3>{name}</h3>
