@@ -1,14 +1,16 @@
 import './PatientList.scss';
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import FHIRRequest from '../api/FHIRRequest';
 import {Link} from "react-router-dom";
 import Loader from '../components/ui/Loader';
 import PatientItem from '../components/ui/PatientItem';
+import getName from '../utils/get-name';
 import {useNavigate} from "react-router-dom";
 
 export default function PatientList() {
-  const [patients, setPatients] = useState([]);
+  const [filterValue, setFilterValue] = useState('');
   const [loaded, setLoaded] = useState(false);
+  const [patients, setPatients] = useState([]);
 
   const navigate = useNavigate();
 
@@ -25,22 +27,46 @@ export default function PatientList() {
     })()
   }, []);
 
-  const handleClick = patient => {
+  const handleClick = useCallback(patient => {
     navigate(`/patient/${patient.id}/dashboard`);
-  };
+  }, [navigate]);
+
+  const handleChange = useCallback(e => {
+    setFilterValue(e.target.value);
+  }, [setFilterValue]);
+
+  const filteredPatients = patients.filter(patient => {
+    const filterValueParsed = filterValue.trim();
+    if (!filterValueParsed) {
+      return true;
+    }
+    return (
+      getName(patient?.name?.[0])?.toLowerCase?.()?.includes?.(filterValueParsed)
+      ||
+      patient?.id === filterValueParsed
+    );
+  });
 
   return !loaded ? (
     <Loader />
   ) : (
-    <div className="list-wrap">
-      {patients.map(patient => (
-        <PatientItem
-          key={patient?.id}
-          onClick={() => handleClick(patient)}
-          patient={patient}
+    <>
+      <div className="patient-filter">
+        <input
+          type="text"
+          value={filterValue}
+          onChange={handleChange}
         />
-      ))}
-    </div>
+      </div>
+      <div className="list-wrap">
+        {filteredPatients.map(patient => (
+          <PatientItem
+            key={patient?.id}
+            onClick={() => handleClick(patient)}
+            patient={patient}
+          />
+        ))}
+      </div>
+    </>
   );
 }
-

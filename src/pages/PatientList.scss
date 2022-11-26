@@ -1,0 +1,26 @@
+@use 'sass:math';
+@import '../styles/variables.scss';
+
+.patient-filter {
+  background-color: #fff;
+  padding: 2 * $base-spacing;
+  position: sticky;
+  top: 0;
+
+  input[type="text"] {
+    background-image: url(../assets/images/search.svg);
+    background-position: $base-spacing 50%;
+    background-repeat: no-repeat;
+    background-size: calc(1rem + math.div($base-spacing, 2));
+    border: 2px solid $color-primary;
+    border-radius: calc(1rem + 2 * $base-spacing);
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding: $base-spacing $base-spacing $base-spacing calc(2 * $base-spacing + 1rem);
+    width: 100%;
+
+    &:focus {
+      border-color: $color-primary;
+    }
+  }
+}
