@@ -3,6 +3,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import LanguageModal from '../components/ui/LanguageModal';
 import PatientCalculator from '../pages/PatientCalculator';
 import PatientDashboard from '../pages/PatientDashboard';
 import PatientDiabro from '../pages/PatientDiabro';
@@ -25,6 +26,7 @@ export default function NavigationContainer() {
           <Route element={<PatientLog />} path="log" />
         </Route>
       </Routes>
+      <LanguageModal />
     </BrowserRouter>
   );
 }

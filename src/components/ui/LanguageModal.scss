@@ -1,0 +1,24 @@
+@use 'sass:math';
+@import '../../styles/variables.scss';
+@import './LanguagePicker.scss';
+
+$icon-size: 80px;
+
+.language-modal {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 2 * $base-spacing;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  .language-picker {
+    height: $icon-size;
+    width: $icon-size;
+  }
+}

@@ -1,5 +1,6 @@
 import './PatientHeader.scss';
 import {Link} from 'react-router-dom';
+import LanguagePicker from './LanguagePicker';
 import React from 'react';
 import config from '../../config';
 import getAge from '../../utils/get-age';
@@ -18,6 +19,8 @@ export default function PatientHeader({goBack}) {
       {goBack && (
         <Link className="back" to="/" />
       )}
+      <LanguagePicker />
+
       <div className="name">{name}</div>
       <div className={`profile-image ${currentPatient?.gender} ${isOld ? 'old' : 'young'}`} />
     </div>

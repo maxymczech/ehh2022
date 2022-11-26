@@ -1,0 +1,28 @@
+@use 'sass:math';
+@import '../../styles/variables.scss';
+
+$icon-size: $top-bar-height - 2 * $base-spacing;
+
+.language-picker {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: $icon-size;
+  margin: 0 $base-spacing;
+  width: $icon-size;
+
+  &.cs {
+    background-image: url(../../assets/images/cs.png);
+  }
+
+  &.en {
+    background-image: url(../../assets/images/en.png);
+  }
+
+  &.uk {
+    background-image: url(../../assets/images/uk.png);
+  }
+}
