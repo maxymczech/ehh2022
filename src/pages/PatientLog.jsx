@@ -1,4 +1,4 @@
-import './PatientCalculator.scss';
+import './PatientLog.scss';
 import React, {useEffect, useState} from 'react';
 import FHIRRequest from '../api/FHIRRequest';
 import Loader from '../components/ui/Loader';

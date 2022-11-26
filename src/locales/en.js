@@ -7,6 +7,9 @@ export default {
     profile: 'Profile'
   },
   dashboard: {
+    contactDetails: {
+      title: 'Contact Details'
+    },
     glucometerReadings: {
       title: 'Glucometer Readings'
     }

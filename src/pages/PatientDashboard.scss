@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.contact-phone {
+  background-image: url(../assets/images/phone.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 1rem auto;
+  padding-left: calc(1rem + $base-spacing);
+}

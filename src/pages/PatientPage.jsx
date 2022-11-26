@@ -1,4 +1,4 @@
-import './PatientDashboard.scss';
+import './PatientPage.scss';
 import {Outlet, useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import BottomBar from '../navigation/BottomBar';
