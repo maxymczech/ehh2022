@@ -1,5 +1,6 @@
-import esbuildServe from 'esbuild-serve';
 import envFilePlugin from 'esbuild-envfile-plugin';
+import esbuildServe from 'esbuild-serve';
+import {sassPlugin} from 'esbuild-sass-plugin'
 
 esbuildServe(
   {
@@ -15,7 +16,10 @@ esbuildServe(
       '.svg': 'file'
     },
     outfile: 'public/main.js',
-    plugins: [envFilePlugin]
+    plugins: [
+      envFilePlugin,
+      sassPlugin()
+    ]
   },
   {
     fallback: 'index.html',
