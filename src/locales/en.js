@@ -6,6 +6,11 @@ export default {
     log: 'Log Activity',
     profile: 'Profile'
   },
+  dashboard: {
+    glucometerReadings: {
+      title: 'Glucometer Readings'
+    }
+  },
   patient: {
     age: 'Age'
   }
