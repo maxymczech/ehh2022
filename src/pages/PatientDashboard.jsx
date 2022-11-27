@@ -1,6 +1,7 @@
 import './PatientDashboard.scss';
 import React, {useEffect, useState} from 'react';
 import Loader from '../components/ui/Loader';
+import TmpGraph from '../assets/images/tmp-graph.png';
 import i18n from '../utils/i18n';
 import {useParams} from 'react-router-dom';
 import {useSessionContext} from '../contexts/SessionContext';
@@ -23,6 +24,7 @@ export default function PatientDashboard() {
             <h3 className="card-title">
               {i18n.t('dashboard.glucometerReadings.title')}
             </h3>
+            <img alt="" className="img-responsive" src={TmpGraph} />
           </div>
 
           {hasContactDetails && (
