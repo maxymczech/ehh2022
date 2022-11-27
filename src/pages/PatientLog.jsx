@@ -9,6 +9,7 @@ export default function PatientLog() {
   const [loaded, setLoaded] = useState(true);
 
   const {patientId} = useParams();
+  const {setReloadPatientValue} = useSessionContext();
 
   return (
     <>

@@ -13,6 +13,7 @@ export default function PatientPage() {
   const {patientId} = useParams();
   const {
     currentPatient,
+    reloadPatientValue,
     setCurrentPatient,
     setCurrentPatientData
   } = useSessionContext();
@@ -31,7 +32,7 @@ export default function PatientPage() {
         console.error(e);
       }
     })()
-  }, []);
+  }, [reloadPatientValue]);
 
   return (
     <>

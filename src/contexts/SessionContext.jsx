@@ -8,6 +8,7 @@ const SessionProvider = ({children}) => {
   const [currentPatient, setCurrentPatient] = useState(null);
   const [currentPatientData, setCurrentPatientData] = useState(null);
   const [languageModalOpen, setLanguageModalOpen] = useState(false);
+  const [reloadPatientValue, setReloadPatientValue] = useState(0);
 
   useEffect(() => {
     try {
@@ -25,10 +26,12 @@ const SessionProvider = ({children}) => {
     currentPatient,
     currentPatientData,
     languageModalOpen,
+    reloadPatientValue,
     setCurrentLocale,
     setCurrentPatient,
     setCurrentPatientData,
-    setLanguageModalOpen
+    setLanguageModalOpen,
+    setReloadPatientValue
   };
 
   return (
