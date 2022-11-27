@@ -1,0 +1,77 @@
+@import '../styles/variables.scss';
+
+$icon-size: 80px;
+
+.calculator-page {
+  h2:first-child {
+    margin-top: 0;
+  }
+}
+
+.calculator-cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  .card {
+    max-width: calc(50% - $base-spacing);
+    min-width: calc(50% - $base-spacing);
+
+    &:last-child {
+      margin-bottom: $base-spacing;
+    }
+
+    &:nth-child(2n+1) {
+      margin-right: auto;
+    }
+
+    &.concerning {
+      background-color: rgba(255, 217, 102, 0.7);
+    }
+
+    &.danger {
+      background-color: rgba(224, 102, 102, 0.5);
+    }
+
+    .food-icon {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      height: $icon-size;
+      margin: 0 auto $base-spacing;
+      width: $icon-size;
+
+      &.apple {
+        background-image: url(../assets/images/food/apple.svg);
+      }
+
+      &.borsch {
+        background-image: url(../assets/images/food/borsch.svg);
+      }
+
+      &.chicken {
+        background-image: url(../assets/images/food/chicken.svg);
+      }
+
+      &.croiassant-ham-cheese {
+        background-image: url(../assets/images/food/croiassant-ham-cheese.svg);
+      }
+
+      &.eggplant {
+        background-image: url(../assets/images/food/eggplant.svg);
+      }
+
+      &.fish-baked {
+        background-image: url(../assets/images/food/fish-baked.svg);
+      }
+    }
+
+    h3 {
+      margin: 0 0 $base-spacing;
+    }
+
+    .food-indices {
+      font-size: 0.875rem;
+      text-align: left;
+    }
+  }
+}

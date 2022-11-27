@@ -6,10 +6,26 @@ export default {
     log: 'Log Activity',
     profile: 'Profile'
   },
+  calculator: {
+    foods: {
+      apple: 'Apple',
+      borsch: 'Borscht',
+      chicken: 'Chicken',
+      'croiassant-ham-cheese': 'Croissant with Ham and Cheese',
+      eggplant: 'Eggplant',
+      'fish-baked': 'Baked fish'
+    },
+    foodsTitle: 'Food for You',
+    index1: 'Glycemic Index',
+    index2: 'Glycemic Load',
+    index3: 'Carbohydrates',
+    title: 'Insulin Dosage Calculator'
+  },
   dashboard: {
     contactDetails: {
       title: 'Contact Details'
     },
+    doctorsTitle: 'Healthcare Professionals',
     glucometerReadings: {
       title: 'Glucometer Readings'
     }

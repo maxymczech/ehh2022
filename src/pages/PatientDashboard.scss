@@ -7,3 +7,28 @@
   background-size: 1rem auto;
   padding-left: calc(1rem + $base-spacing);
 }
+
+.doctor-cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  .card {
+    max-width: calc(50% - $base-spacing);
+    min-width: calc(50% - $base-spacing);
+
+    &:last-child {
+      margin-bottom: $base-spacing;
+    }
+
+    &:nth-child(2n+1) {
+      margin-right: auto;
+    }
+
+    .measurement-icon {
+      height: 80px;
+      margin: 0 auto;
+      width: 80px;
+    }
+  }
+}

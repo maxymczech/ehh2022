@@ -50,6 +50,16 @@ export default function PatientDashboard() {
               ))}
             </div>
           )}
+
+          <h2>{i18n.t('dashboard.doctorsTitle')}</h2>
+          <div className="doctor-cards">
+            <div className="card">
+              <div className="measurement-icon procedure"></div>
+            </div>
+            <div className="card">
+              <div className="measurement-icon encounter"></div>
+            </div>
+          </div>
         </>
       )}
     </>
