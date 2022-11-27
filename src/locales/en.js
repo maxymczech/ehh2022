@@ -33,9 +33,9 @@ export default {
   },
   log: {
     btnSubmit: 'Log',
-    glucometer: 'Glucometer',
+    glucometer: 'Glucometer Reading',
     height: 'Body Height',
-    oxymeter: 'Oxymeter',
+    oxymeter: 'Oxymeter Reading',
     placeholder: 'Enter value',
     pressure: 'Blood Pressure',
     temperature: 'Temperature',

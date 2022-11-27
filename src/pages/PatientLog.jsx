@@ -9,27 +9,33 @@ import {useSessionContext} from '../contexts/SessionContext';
 const loggableObservations = [{
   code: '2339-0',
   icon: 'glucometer',
-  title: 'log.glucometer'
+  title: 'log.glucometer',
+  unit: 'mg/dL'
 }, {
   code: '20565-8',
   icon: 'oxymeter',
-  title: 'log.oxymeter'
+  title: 'log.oxymeter',
+  unit: '%'
 }, {
   code: '85354-9',
-  icon: 'pressure',
-  title: 'log.pressure'
+  icon: 'tonometer',
+  title: 'log.pressure',
+  unit: 'mmHg'
 }, {
   code: '8331-1',
-  icon: 'temperature',
-  title: 'log.temperature'
+  icon: 'thermometer',
+  title: 'log.temperature',
+  unit: 'C'
 }, {
   code: '8302-2',
   icon: 'height',
-  title: 'log.height'
+  title: 'log.height',
+  unit: 'm'
 }, {
   code: '29463-7',
   icon: 'weight',
-  title: 'log.weight'
+  title: 'log.weight',
+  unit: 'kg'
 }];
 
 export default function PatientLog() {
@@ -39,6 +45,10 @@ export default function PatientLog() {
 
   const {patientId} = useParams();
   const {setReloadPatientValue} = useSessionContext();
+
+  const observation = loggableObservations.find(x => x.code === logCode);
+  const unit = observation?.unit;
+  const logTitle = i18n.t(observation?.title || '');
 
   const handleChange = useCallback(e => {
     setLogValue(e.target.value);
@@ -50,9 +60,45 @@ export default function PatientLog() {
       return;
     }
 
-    setLogCode(none);
-    setLogValue('');
-  }, []);
+    (async () => {
+      const payload = {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": logCode,
+              "display": logTitle
+            }
+          ],
+          "text": logTitle
+        },
+        "subject": {
+          "reference": `Patient/${patientId}`
+        },
+        "issued": (new Date()).toISOString(),
+        "valueQuantity": {
+          "value": Number(logValue),
+          "system": "http://unitsofmeasure.org",
+          "unit": unit
+        }
+      };
+
+      try {
+        await FHIRRequest('/Observation', {
+          body: JSON.stringify(payload),
+          method: 'POST'
+        });
+        setReloadPatientValue(x => x + 1);
+      } catch (e) {
+        console.error(e);
+      }
+
+      setLogCode(null);
+      setLogValue('');
+    })();
+  }, [logValue, setLogCode, setLogValue]);
 
   const stopPropagation = useCallback(e => {
     e.stopPropagation();
@@ -82,17 +128,19 @@ export default function PatientLog() {
           className="modal log-modal"
           onClick={() => setLogCode(null)}
         >
-          <form onSubmit={handleSubmit} onClick={stopPropagation}>
-            <input
-              onChange={handleChange}
-              placeholder={i18n.t('log.placeholder')}
-              type="text"
-              value={logValue}
-            />
-            <button type="submit">
-              {i18n.t('log.btnSubmit')}
-            </button>
-          </form>
+          <div onClick={stopPropagation}>
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                placeholder={`${i18n.t('log.placeholder')}, ${unit}`}
+                type="text"
+                value={logValue}
+              />
+              <button type="submit">
+                {i18n.t('log.btnSubmit')}
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </>
