@@ -1,9 +1,8 @@
 import locales from '../locales';
-import {useSessionContext} from '../contexts/SessionContext';
 
 export default {
   t: path => {
-    const {currentLocale} = useSessionContext();
+    const currentLocale = localStorage.getItem('currentLocale') || 'en';
     if (!(currentLocale in locales)) {
       return path;
     }
