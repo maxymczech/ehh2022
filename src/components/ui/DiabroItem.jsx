@@ -11,7 +11,7 @@ export default function DiabroItem({date, item}) {
     case 'Claim':
       return (
         <div className="card diabro-item">
-          <div className="icon insurance-claim"></div>
+          <div className="measurement-icon insurance-claim"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.insuranceClaim.title')}</h3>
             <p>{item?.resource?.provider?.display}</p>
@@ -32,7 +32,7 @@ export default function DiabroItem({date, item}) {
     case 'Condition':
       return (
         <div className="card diabro-item">
-          <div className="icon condition"></div>
+          <div className="measurement-icon condition"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.condition')}</h3>
             <p className="time">{getTime(date)}</p>
@@ -45,7 +45,7 @@ export default function DiabroItem({date, item}) {
     case 'DiagnosticReport':
       return (
         <div className="card diabro-item">
-          <div className="icon report"></div>
+          <div className="measurement-icon report"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.diagnosticReport')}</h3>
             <p className="time">{getTime(date)}</p>
@@ -58,7 +58,7 @@ export default function DiabroItem({date, item}) {
     case 'Encounter':
       return (
         <div className="card diabro-item">
-          <div className="icon encounter"></div>
+          <div className="measurement-icon encounter"></div>
           <div className="rest">
             <h3>{item?.resource?.serviceProvider?.display}</h3>
             <p className="time">{getTime(date)}</p>
@@ -71,7 +71,7 @@ export default function DiabroItem({date, item}) {
     case 'Goal':
       return (
         <div className="card diabro-item">
-          <div className="icon goal"></div>
+          <div className="measurement-icon goal"></div>
           <div className="rest">
             <h3>{item?.resource?.target?.[0]?.measure?.text}</h3>
           </div>
@@ -82,7 +82,7 @@ export default function DiabroItem({date, item}) {
     case 'Immunization':
       return (
         <div className="card diabro-item">
-          <div className="icon immunization"></div>
+          <div className="measurement-icon immunization"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.immunization')}</h3>
             <p className="time">{getTime(date)}</p>
@@ -95,7 +95,7 @@ export default function DiabroItem({date, item}) {
     case 'MedicationRequest':
       return (
         <div className="card diabro-item">
-          <div className="icon medication"></div>
+          <div className="measurement-icon medication"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.medicationRequest')}</h3>
             <p className="time">{getTime(date)}</p>
@@ -162,7 +162,7 @@ export default function DiabroItem({date, item}) {
 
       return (
         <div className="card diabro-item">
-          <div className={`icon measurement ${iconClass}`}></div>
+          <div className={`measurement-icon measurement ${iconClass}`}></div>
           <div className="rest">
             <h3>{item?.resource?.code?.text}</h3>
             <p className="time">{getTime(date)}</p>
@@ -175,7 +175,7 @@ export default function DiabroItem({date, item}) {
     case 'Procedure':
       return (
         <div className="card diabro-item">
-          <div className="icon procedure"></div>
+          <div className="measurement-icon procedure"></div>
           <div className="rest">
             <h3>{i18n.t('diabro.procedure')}</h3>
             <p className="time">{getTime(date)}</p>

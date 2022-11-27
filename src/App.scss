@@ -100,3 +100,66 @@ p {
 .d-block {
   display: block;
 }
+
+.measurement-icon {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  &.immunization {
+    background-image: url(./assets/images/injection.svg);
+  }
+
+  &.insurance-claim,
+  &.condition,
+  &.report {
+    background-image: url(./assets/images/tablet-blank.svg);
+  }
+
+  &.medication {
+    background-image: url(./assets/images/medication-1.svg);
+  }
+
+  &.procedure {
+    background-image: url(./assets/images/nurse.svg);
+  }
+
+  &.measurement {
+    background-image: url(./assets/images/measurement.svg);
+
+    &.blood {
+      background-image: url(./assets/images/blood.svg);
+    }
+
+    &.glucometer {
+      background-image: url(./assets/images/glucometer.svg);
+    }
+
+    &.oxymeter {
+      background-image: url(./assets/images/oxymeter.svg);
+    }
+
+    &.thermometer {
+      background-image: url(./assets/images/thermometer.svg);
+    }
+
+    &.tonometer {
+      background-image: url(./assets/images/tonometer.svg);
+    }
+
+    &.urine {
+      background-image: url(./assets/images/urine.svg);
+    }
+
+    &.weight {
+      background-image: url(./assets/images/weight.svg);
+    }
+  }
+
+  &.encounter {
+    background-image: url(./assets/images/doctor.svg);
+  }
+
+  &.goal {
+    background-image: url(./assets/images/sneakers.svg);
+  }
+}
