@@ -27,6 +27,16 @@ export default {
     observation: 'Observation',
     procedure: 'Procedure'
   },
+  log: {
+    btnSubmit: 'Log',
+    glucometer: 'Glucometer',
+    height: 'Body Height',
+    oxymeter: 'Oxymeter',
+    placeholder: 'Enter value',
+    pressure: 'Blood Pressure',
+    temperature: 'Temperature',
+    weight: 'Body Weight'
+  },
   patient: {
     age: 'Age'
   }

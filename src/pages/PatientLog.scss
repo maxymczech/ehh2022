@@ -1,0 +1,64 @@
+@import '../styles/variables.scss';
+
+$icon-size: 80px;
+
+.patient-log-cards {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  .card {
+    max-width: calc(50% - $base-spacing);
+    min-width: calc(50% - $base-spacing);
+
+    &:last-child {
+      margin-bottom: $base-spacing;
+    }
+
+    &:nth-child(2n+1) {
+      margin-right: auto;
+    }
+
+    .measurement-icon {
+      height: $icon-size;
+      margin: 0 auto $base-spacing;
+      width: $icon-size;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      margin: 0;
+    }
+  }
+}
+
+.log-modal {
+  form {
+    align-items: stretch;
+    display: flex;
+
+    input[type="text"] {
+      border: 2px solid $color-primary;
+      border-radius: calc(1rem + 2 * $base-spacing) 0 0 calc(1rem + 2 * $base-spacing);
+      border-right: none;
+      flex-grow: 1;
+      font-family: sans-serif;
+      font-size: 1rem;
+      padding: $base-spacing (2 * $base-spacing);
+
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+
+    button[type="submit"] {
+      background-color: $color-primary;
+      border: none;
+      border-radius: 0 calc(1rem + 2 * $base-spacing) calc(1rem + 2 * $base-spacing) 0;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 1rem;
+      padding: $base-spacing (2 * $base-spacing);
+    }
+  }
+}

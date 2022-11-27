@@ -101,6 +101,10 @@ p {
   display: block;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .measurement-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -162,4 +166,18 @@ p {
   &.goal {
     background-image: url(./assets/images/sneakers.svg);
   }
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  padding: 2 * $base-spacing;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
 }

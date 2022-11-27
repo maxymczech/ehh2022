@@ -26,7 +26,7 @@ export default function LanguageModal() {
   }, [closeModal]);
 
   return languageModalOpen && (
-    <div className="language-modal" onClick={closeModal}>
+    <div className="modal language-modal" onClick={closeModal}>
       {localeKeys.map(key => (
         <button
           className={`language-picker ${key}`}
