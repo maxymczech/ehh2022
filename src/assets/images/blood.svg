@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EDEDEE;}
+	.st1{opacity:0.3;fill:#8384B5;}
+	.st2{fill:#EF4645;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:#228FB9;}
+	.st5{opacity:0.3;}
+	.st6{fill:#8384B5;}
+</style>
+<g id="кровушка">
+	<path class="st0" d="M248.98,488.62L248.98,488.62c-30.44,0-55.12-19.44-55.12-43.41V52.67h110.23v392.53
+		C304.09,469.18,279.42,488.62,248.98,488.62z"/>
+	<path class="st1" d="M248.98,476.07L248.98,476.07c-24.93,0-45.15-15.92-45.15-35.56V90.53h90.29v349.98
+		C294.12,460.15,273.91,476.07,248.98,476.07z"/>
+	<rect x="193.86" y="52.67" class="st1" width="110.23" height="23.2"/>
+	<path class="st2" d="M203.83,156.47v278.62c0,22.63,20.21,40.98,45.15,40.98c24.93,0,45.15-18.35,45.15-40.98V156.47H203.83z"/>
+	<path class="st1" d="M287.76,429.75c0,19.44-17.36,35.2-38.78,35.2s-38.78-15.76-38.78-35.2l-1.96-273.29h-4.41v278.62
+		c0,22.63,20.21,40.98,45.15,40.98c24.93,0,45.15-18.35,45.15-40.98V156.47h-4.45L287.76,429.75z"/>
+	<rect x="200.06" y="187.17" class="st3" width="97.82" height="117.82"/>
+	<g>
+		<rect x="219.91" y="210.55" class="st1" width="58.14" height="17.52"/>
+		<rect x="211.2" y="249.79" class="st1" width="75.56" height="9.11"/>
+		<rect x="211.2" y="271.51" class="st1" width="75.56" height="9.11"/>
+	</g>
+	<path class="st4" d="M321.28,62.43h-144.6c-0.18,0-0.32-0.14-0.32-0.32V12.21c0-0.18,0.14-0.32,0.32-0.32h144.6
+		c0.18,0,0.32,0.14,0.32,0.32v49.91C321.6,62.29,321.45,62.43,321.28,62.43z"/>
+	<g class="st5">
+		<rect x="187.04" y="11.89" class="st6" width="10.73" height="50.54"/>
+		<rect x="215.32" y="11.89" class="st6" width="10.73" height="50.54"/>
+		<rect x="243.61" y="11.89" class="st6" width="10.73" height="50.54"/>
+		<rect x="271.9" y="11.89" class="st6" width="10.73" height="50.54"/>
+		<rect x="300.19" y="11.89" class="st6" width="10.73" height="50.54"/>
+	</g>
+</g>
+</svg>

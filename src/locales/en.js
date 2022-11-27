@@ -14,6 +14,19 @@ export default {
       title: 'Glucometer Readings'
     }
   },
+  diabro: {
+    condition: 'Condition Diagnosed',
+    diagnosticReport: 'Diagnostic Report',
+    encounter: 'Encounter',
+    immunization: 'Immunization',
+    insuranceClaim: {
+      amount: 'Amount',
+      title: 'Insurance Claim'
+    },
+    medicationRequest: 'Medication Request',
+    observation: 'Observation',
+    procedure: 'Procedure'
+  },
   patient: {
     age: 'Age'
   }

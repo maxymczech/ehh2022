@@ -1,6 +1,5 @@
 import './PatientDashboard.scss';
 import React, {useEffect, useState} from 'react';
-import FHIRRequest from '../api/FHIRRequest';
 import Loader from '../components/ui/Loader';
 import i18n from '../utils/i18n';
 import {useParams} from 'react-router-dom';

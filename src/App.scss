@@ -37,6 +37,30 @@ body {
   }
 }
 
+.card-group {
+  margin-bottom: $base-spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .card-group-title {
+    background-image: url(./assets/images/point-grey.png);
+    background-position: 50% 50%;
+    background-repeat: repeat-x;
+    color: $color-grey;
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin-bottom: $base-spacing;
+    text-align: center;
+
+    span {
+      background-color: #fff;
+      padding: 0 $base-spacing;
+    }
+  }
+}
+
 .profile-image {
   background-position: 50% 100%;
   background-repeat: no-repeat;
@@ -71,4 +95,8 @@ p {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.d-block {
+  display: block;
 }
