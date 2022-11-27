@@ -19,7 +19,8 @@ esbuildServe(
     plugins: [
       envFilePlugin,
       sassPlugin()
-    ]
+    ],
+    publicPath: '/'
   },
   {
     fallback: 'index.html',

@@ -13,6 +13,7 @@ $icon-size: $top-bar-height - 2 * $base-spacing;
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 50;
 
   .back {
     background-image: url(../../assets/images/arrow-left.svg);

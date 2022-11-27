@@ -27,6 +27,10 @@ export default {
     observation: 'Observation',
     procedure: 'Procedure'
   },
+  info: {
+    title1: 'Daily Advice from Dia Bro',
+    title2: 'Useful Information'
+  },
   log: {
     btnSubmit: 'Log',
     glucometer: 'Glucometer',

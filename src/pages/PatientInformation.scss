@@ -1,0 +1,17 @@
+.information-wrap {
+  h2 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .swiper-wrapper {
+    height: auto !important;
+  }
+
+  .swiper-slide {
+    img {
+      width: 100%;
+    }
+  }
+}
