@@ -13,7 +13,7 @@
   "description": "DiaBro application by team robomeow for European Healthcare Hackathon 2022",
   "devDependencies": {
     "dotenv": "^16.0.3",
-    "esbuild": "^0.15.15",
+    "esbuild": "^0.15.16",
     "esbuild-envfile-plugin": "^1.0.5",
     "esbuild-serve": "https://github.com/maxymczech/esbuild-serve.git"
   },
